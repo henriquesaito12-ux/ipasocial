@@ -83,10 +83,12 @@ ul {
   align-items: center;
   justify-content: space-between;
   height: 72px;
+  position: relative;
 }
 
 .header-toggle {
   order: -1;
+  flex-shrink: 0;
 }
 
 .header-logo {
@@ -98,6 +100,7 @@ ul {
 
 .header-cta {
   order: 1;
+  flex-shrink: 0;
 }
 
 @media (min-width: 768px) {
@@ -120,6 +123,7 @@ ul {
 
   .header-cta {
     order: unset;
+    justify-self: end;
   }
 }
 
@@ -846,12 +850,21 @@ ul {
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .doe__qr img {
   width: 200px;
-  height: 200px;
+  height: auto;
   border-radius: var(--radius);
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .doe__qr img {
+    width: 280px;
+  }
 }
 
 .doe__qr-placeholder {
@@ -876,6 +889,8 @@ ul {
 
 .doe__info {
   text-align: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 .doe__info h3 {

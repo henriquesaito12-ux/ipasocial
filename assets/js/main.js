@@ -104,6 +104,58 @@ document.querySelectorAll('.impacto__numero').forEach(el => {
 });
 
 /* ===========================
+   CARROSSEL — Scroll contínuo
+   =========================== */
+
+(function () {
+  const track = document.querySelector('.carrossel__track');
+  if (!track) return;
+
+  let offset = 0;
+  const speed = 0.8; // px por frame
+
+  function getHalfWidth() {
+    const imgs = track.querySelectorAll('img:not([aria-hidden])');
+    let w = 0;
+    imgs.forEach(img => { w += img.offsetWidth; });
+    w += (imgs.length) * 16; // gap
+    return w;
+  }
+
+  let halfWidth = 0;
+
+  function startScroll() {
+    halfWidth = getHalfWidth();
+    function step() {
+      offset -= speed;
+      if (Math.abs(offset) >= halfWidth) {
+        offset += halfWidth;
+      }
+      track.style.transform = 'translateX(' + offset + 'px)';
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // esperar imagens carregarem para medir corretamente
+  const imgs = track.querySelectorAll('img');
+  let loaded = 0;
+  imgs.forEach(img => {
+    if (img.complete) {
+      loaded++;
+    } else {
+      img.addEventListener('load', () => {
+        loaded++;
+        if (loaded === imgs.length) startScroll();
+      });
+    }
+  });
+  if (loaded === imgs.length) startScroll();
+
+  window.addEventListener('resize', () => { halfWidth = getHalfWidth(); });
+})();
+
+/* ===========================
    PIX — Copiar chave
    =========================== */
 

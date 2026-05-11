@@ -789,7 +789,7 @@ ul {
   display: flex;
   gap: 16px;
   width: max-content;
-  animation: scroll-carrossel 60s linear infinite;
+  will-change: transform;
 }
 
 .carrossel__track img {
@@ -798,15 +798,6 @@ ul {
   border-radius: var(--radius);
   object-fit: cover;
   flex-shrink: 0;
-}
-
-@keyframes scroll-carrossel {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
 @media (max-width: 768px) {

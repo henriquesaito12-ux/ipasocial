@@ -800,10 +800,6 @@ ul {
   flex-shrink: 0;
 }
 
-.carrossel:hover .carrossel__track {
-  animation-play-state: paused;
-}
-
 @keyframes scroll-carrossel {
   0% {
     transform: translateX(0);

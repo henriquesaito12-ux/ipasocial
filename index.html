@@ -148,7 +148,7 @@
 
           <article class="card">
             <div class="card__image-wrapper">
-              <img class="card__image" src="./assets/natalnova.jpeg" alt="Natal solidário da IPa — crianças com Papai Noel e banner IPa">
+              <img class="card__image card__image--natal" src="./assets/capanatal.jpeg" alt="Natal solidário da IPa — crianças com Papai Noel e banner IPa">
             </div>
             <div class="card__body">
               <h3 class="card__title">Natal e Páscoa Solidária</h3>
@@ -164,7 +164,7 @@
 
           <article class="card">
             <div class="card__image-wrapper">
-              <img class="card__image" src="./assets/bazarnova.jpg" alt="Bazar solidário da IPa — calçados e roupas à disposição da comunidade">
+              <img class="card__image card__image--bazar" src="./assets/capabazar.jpeg" alt="Bazar solidário da IPa — calçados e roupas à disposição da comunidade">
             </div>
             <div class="card__body">
               <h3 class="card__title">Bazar Solidário</h3>
@@ -298,7 +298,7 @@
     <section class="section impacto" id="impacto">
       <div class="container">
         <h2 class="section__title">Nosso Impacto</h2>
-        <p class="section__subtitle">Números que refletem nossa dedicação em 2025</p>
+        <p class="section__subtitle">Números que refletem nossa dedicação</p>
         <div class="impacto__grid">
           <div class="impacto__item">
             <span class="impacto__icon">
@@ -307,6 +307,14 @@
             <span class="impacto__numero" data-target="600">0</span>
             <span class="impacto__prefixo">+</span>
             <p class="impacto__label">Cestas básicas entregues em 2025</p>
+          </div>
+          <div class="impacto__item">
+            <span class="impacto__icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </span>
+            <span class="impacto__numero" data-target="150">0</span>
+            <span class="impacto__prefixo">+</span>
+            <p class="impacto__label">Cestas básicas entregues no 1º bimestre de 2026</p>
           </div>
           <div class="impacto__item">
             <span class="impacto__icon">
@@ -320,9 +328,56 @@
             <span class="impacto__icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
             </span>
-            <span class="impacto__numero" data-target="0" data-text="true"></span>
+            <span class="impacto__numero impacto__numero--texto">Constante</span>
             <p class="impacto__label">Crescimento no número de famílias atendidas</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CESTAS BÁSICAS ========== -->
+    <section class="section cestas" id="cestas">
+      <div class="container">
+        <h2 class="section__title">Mais de 800 cestas básicas entregues</h2>
+        <p class="section__subtitle">Cada cesta representa uma família alcançada pela solidariedade do nosso movimento</p>
+      </div>
+      <div class="carrossel" aria-label="Fotos das entregas de cestas básicas">
+        <div class="carrossel__track">
+          <img src="./cestas/cesta1.png" alt="Entrega de cestas básicas 1" loading="lazy">
+          <img src="./cestas/cesta2.png" alt="Entrega de cestas básicas 2" loading="lazy">
+          <img src="./cestas/cesta3.png" alt="Entrega de cestas básicas 3" loading="lazy">
+          <img src="./cestas/cesta4.png" alt="Entrega de cestas básicas 4" loading="lazy">
+          <img src="./cestas/cesta5.png" alt="Entrega de cestas básicas 5" loading="lazy">
+          <img src="./cestas/cesta6.png" alt="Entrega de cestas básicas 6" loading="lazy">
+          <img src="./cestas/cesta7.png" alt="Entrega de cestas básicas 7" loading="lazy">
+          <img src="./cestas/cesta8.png" alt="Entrega de cestas básicas 8" loading="lazy">
+          <img src="./cestas/cesta9.png" alt="Entrega de cestas básicas 9" loading="lazy">
+          <img src="./cestas/cesta10.png" alt="Entrega de cestas básicas 10" loading="lazy">
+          <img src="./cestas/cesta11.png" alt="Entrega de cestas básicas 11" loading="lazy">
+          <img src="./cestas/cesta12.png" alt="Entrega de cestas básicas 12" loading="lazy">
+          <img src="./cestas/cesta13.png" alt="Entrega de cestas básicas 13" loading="lazy">
+          <img src="./cestas/cesta14.png" alt="Entrega de cestas básicas 14" loading="lazy">
+          <img src="./cestas/cesta15.png" alt="Entrega de cestas básicas 15" loading="lazy">
+          <img src="./cestas/cesta16.png" alt="Entrega de cestas básicas 16" loading="lazy">
+          <img src="./cestas/cesta17.png" alt="Entrega de cestas básicas 17" loading="lazy">
+          <!-- duplicadas para loop infinito -->
+          <img src="./cestas/cesta1.png" alt="Entrega de cestas básicas 1" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta2.png" alt="Entrega de cestas básicas 2" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta3.png" alt="Entrega de cestas básicas 3" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta4.png" alt="Entrega de cestas básicas 4" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta5.png" alt="Entrega de cestas básicas 5" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta6.png" alt="Entrega de cestas básicas 6" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta7.png" alt="Entrega de cestas básicas 7" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta8.png" alt="Entrega de cestas básicas 8" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta9.png" alt="Entrega de cestas básicas 9" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta10.png" alt="Entrega de cestas básicas 10" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta11.png" alt="Entrega de cestas básicas 11" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta12.png" alt="Entrega de cestas básicas 12" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta13.png" alt="Entrega de cestas básicas 13" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta14.png" alt="Entrega de cestas básicas 14" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta15.png" alt="Entrega de cestas básicas 15" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta16.png" alt="Entrega de cestas básicas 16" loading="lazy" aria-hidden="true">
+          <img src="./cestas/cesta17.png" alt="Entrega de cestas básicas 17" loading="lazy" aria-hidden="true">
         </div>
       </div>
     </section>

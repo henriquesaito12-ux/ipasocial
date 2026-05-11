@@ -582,6 +582,14 @@ ul {
   object-position: center 35%;
 }
 
+.card__image--natal {
+  object-position: center 55%;
+}
+
+.card__image--bazar {
+  object-position: center 35%;
+}
+
 .card__body {
   padding: 24px;
 }
@@ -697,7 +705,7 @@ ul {
 
 .impacto__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   text-align: center;
   align-items: stretch;
@@ -730,6 +738,10 @@ ul {
   display: inline;
 }
 
+.impacto__numero--texto {
+  font-size: 2rem;
+}
+
 .impacto__prefixo {
   font-size: 2rem;
   font-weight: 700;
@@ -740,6 +752,71 @@ ul {
   font-size: 0.95rem;
   color: var(--cor-texto-sec);
   margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .impacto__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .impacto__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================
+   CESTAS — CARROSSEL
+   =========================== */
+
+.cestas {
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.cestas .section__title {
+  color: var(--rosa-escuro);
+}
+
+.carrossel {
+  margin-top: 40px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carrossel__track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: scroll-carrossel 60s linear infinite;
+}
+
+.carrossel__track img {
+  height: 260px;
+  width: auto;
+  border-radius: var(--radius);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.carrossel:hover .carrossel__track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-carrossel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .carrossel__track img {
+    height: 180px;
+  }
 }
 
 /* ===========================

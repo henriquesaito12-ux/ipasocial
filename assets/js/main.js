@@ -159,10 +159,8 @@ document.querySelectorAll('.impacto__numero').forEach(el => {
    PIX — Copiar chave
    =========================== */
 
-const btnCopiarPix = document.getElementById('btnCopiarPix');
-const pixChave = document.getElementById('pixChave');
-
-if (btnCopiarPix) {
+document.querySelectorAll('.btnCopiarPix').forEach(btnCopiarPix => {
+  const pixChave = btnCopiarPix.closest('.doe__chave').querySelector('.pixChave');
   btnCopiarPix.addEventListener('click', () => {
     const texto = pixChave.textContent;
     navigator.clipboard.writeText(texto).then(() => {
@@ -173,7 +171,7 @@ if (btnCopiarPix) {
       }, 2000);
     });
   });
-}
+});
 
 /* ===========================
    FORMULÁRIOS — Envio por e-mail

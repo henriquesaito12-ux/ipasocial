@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Campanha de Natal IPa — Vamos juntos alcançar 3 mil crianças</title>
+  <meta name="description" content="Campanha de Natal da IPa: escolha os brinquedos que você quer doar e ajude a levar alegria para 3 mil crianças.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="IPa — Movimento Comunitário">
+  <meta property="og:title" content="Campanha de Natal IPa — Vamos juntos alcançar 3 mil crianças!">
+  <meta property="og:description" content="Escolha os brinquedos que você quer doar e faça parte dessa corrente de alegria.">
+  <meta property="og:url" content="https://ipasocial.com.br/campanhanatal2026/">
+  <meta property="og:image" content="https://ipasocial.com.br/campanhanatal2026/img/og-campanha.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Campanha de Natal IPa: vamos juntos alcançar 3 mil crianças">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#fbf6ee">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
+  <script src="vendor-qrcode.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="pular" href="#catalogo">Pular para os brinquedos</a>
+
+  <header class="hero">
+    <div class="hero__neve" aria-hidden="true"></div>
+    <div class="hero__conteudo">
+      <div class="logo-selo"><img src="img/logo-ipa.webp" alt="IPa — Movimento Comunitário" width="640" height="339"></div>
+      <p class="selo">Campanha de Natal</p>
+      <h1>Vamos juntos alcançar 3 mil crianças!</h1>
+      <p class="hero__sub">Faça parte dessa corrente de <span class="nowrap">alegria <span aria-hidden="true">❤️</span></span></p>
+      <p class="hero__texto">Adote um, dois, três ou quantos brinquedos quiser. Cada contribuição nos aproxima de uma grande missão: fazer o sorriso de 3 mil crianças acontecer!</p>
+
+      <p class="insta insta--topo"><a class="botao-insta" href="https://www.instagram.com/ipa.social/" target="_blank" rel="noopener"><svg class="botao-insta__icone" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.6l1.2-1.8c.3-.4.7-.7 1.2-.7h3c.5 0 .9.3 1.2.7L15.9 6h1.6A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12.5" r="3.3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Siga a causa no Instagram</a></p>
+
+      <section class="placar" aria-live="polite" aria-label="Brinquedos arrecadados até agora">
+        <p class="placar__titulo">Nossa meta: <strong><span id="meta">3.000</span> brinquedos</strong></p>
+        <div class="placar__barra" role="progressbar" aria-valuemin="0" id="barraMeta" aria-valuenow="0">
+          <span id="barraPreench"></span>
+        </div>
+        <p class="placar__numeros"><span class="placar__total" id="totalGeral">—</span> <span class="placar__rotulo">de <span id="metaTexto">3.000</span> brinquedos <span id="metaPct"></span></span></p>
+        <p class="placar__lema">Cada brinquedo conta. Cada gesto transforma!</p>
+      </section>
+    </div>
+  </header>
+
+  <main id="principal">
+    <div class="aviso aviso--encerrada" id="avisoEncerrada" hidden>
+      A campanha foi encerrada. Muito obrigado a todos que participaram!
+    </div>
+
+    <ol class="passos" aria-label="Como funciona">
+      <li><span>1</span><div><strong>Escolha</strong> os brinquedos e as quantidades</div></li>
+      <li><span>2</span><div><strong>Salve</strong> quantas vezes quiser, somando ou tirando</div></li>
+      <li><span>3</span><div><strong>Finalize</strong> com seu nome e WhatsApp</div></li>
+    </ol>
+
+    <section id="catalogo" aria-label="Brinquedos para doação">
+      <div class="grade" id="grade">
+        <p class="carregando">Carregando brinquedos…</p>
+      </div>
+    </section>
+
+    <p class="nota">Valores de referência por brinquedo. Depois de finalizar, você pode pagar pelo PIX abaixo.</p>
+
+    <section class="pix" id="pix" aria-labelledby="pixTitulo">
+      <h2 id="pixTitulo">Doe pelo PIX</h2>
+      <p class="pix__texto">Pague o valor dos brinquedos que você escolheu, ou doe qualquer valor. Todo o dinheiro vira brinquedo para as crianças.</p>
+      <div class="pix__conteudo" data-pix></div>
+    </section>
+
+    <section class="evento" aria-labelledby="eventoTitulo">
+      <div class="evento__data" aria-hidden="true">
+        <span class="evento__dia">20</span>
+        <span class="evento__mes">dez</span>
+        <span class="evento__hora">10h</span>
+      </div>
+      <div class="evento__texto">
+        <p class="evento__selo">Entrega dos presentes</p>
+        <h2 id="eventoTitulo">Vamos fazer as entregas no dia 20 de dezembro, às 10h!</h2>
+        <p class="evento__quando">Domingo, 20/12/2026, às 10:00</p>
+        <p class="evento__local"><strong>Local:</strong> em frente ao campo da OSAN, no Jardim Rêmulo Zoppi
+          · <a href="https://www.google.com/maps/search/?api=1&amp;query=Campo%20da%20OSAN%20Jardim%20R%C3%AAmulo%20Zoppi%20Indaiatuba" target="_blank" rel="noopener">Ver no mapa</a></p>
+        <p class="evento__convite">Convidamos a todos a prestigiar, estar presentes e fazer parte desse momento especial!</p>
+      </div>
+    </section>
+
+    <p class="duvidas">Tem alguma dúvida? Nos contate via <a href="https://wa.me/5519992252700?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20a%20Campanha%20de%20Natal%20da%20IPa." target="_blank" rel="noopener">WhatsApp</a></p>
+  </main>
+
+  <section class="obrigado" id="obrigado" hidden tabindex="-1" aria-labelledby="obrigadoTitulo">
+    <div class="obrigado__cartao">
+      <div class="obrigado__estrela" aria-hidden="true">★</div>
+      <h2 id="obrigadoTitulo">Obrigado, <span id="obrigadoNome"></span>!</h2>
+      <p>Sua doação foi registrada. Veja o resumo:</p>
+      <table class="resumo">
+        <thead><tr><th>Brinquedo</th><th>Qtd.</th><th>Valor</th></tr></thead>
+        <tbody id="obrigadoItens"></tbody>
+        <tfoot><tr><td>Total</td><td id="obrigadoQtd"></td><td id="obrigadoValor"></td></tr></tfoot>
+      </table>
+      <p class="obrigado__instrucoes" id="obrigadoInstrucoes"></p>
+      <div class="pix pix--obrigado">
+        <h3>Pague pelo PIX: <span id="obrigadoValorPix"></span></h3>
+        <p class="pix__texto">Este código já vem com o valor da sua doação. É só copiar e colar no app do seu banco, na opção <strong>PIX Copia e Cola</strong>.</p>
+        <div class="pix__valor">
+          <figure class="pix__qr pix__qr--valor"><img id="qrValor" alt="QR Code PIX com o valor da sua doação" width="220" height="220"><figcaption>Ou escaneie com o app do banco</figcaption></figure>
+          <div class="pix__acoes">
+            <button type="button" class="botao botao--primario botao--largo" id="btnCopiarValor">Copiar código PIX</button>
+            <a class="botao botao--secundario botao--largo botao--link" id="btnMeuWhats" href="#" target="_blank" rel="noopener">Mandar para meu WhatsApp</a>
+            <p class="pix__favorecido">Favorecido: IPA MOVIMENTO COMUNITARIO · Indaiatuba</p>
+          </div>
+        </div>
+        <p class="obrigado__comprovante"><a id="linkComprovante" href="https://wa.me/5519992252700" target="_blank" rel="noopener">Depois de pagar, envie o comprovante pelo WhatsApp</a></p>
+      </div>
+      <button type="button" class="botao botao--secundario" id="btnImprimir">Salvar ou imprimir resumo</button>
+    </div>
+  </section>
+
+  <div class="barra" id="barra" hidden>
+    <div class="barra__resumo">
+      <strong id="barraQtd">0 brinquedos</strong>
+      <span id="barraValor">R$ 0,00</span>
+      <small id="barraStatus" aria-live="polite"></small>
+    </div>
+    <div class="barra__acoes">
+      <button type="button" class="botao botao--secundario" id="btnSalvar" disabled>Salvar</button>
+      <button type="button" class="botao botao--primario" id="btnFinalizar" disabled>Finalizar</button>
+    </div>
+  </div>
+
+  <dialog class="modal" id="modal" aria-labelledby="modalTitulo">
+    <form id="formFinalizar" novalidate>
+      <button type="button" class="modal__fechar" id="btnFechar" aria-label="Fechar">×</button>
+      <h2 id="modalTitulo">Finalizar doação</h2>
+      <ul class="modal__itens" id="modalItens"></ul>
+      <p class="modal__total" id="modalTotal"></p>
+
+      <label>Seu nome
+        <input name="nome" id="campoNome" autocomplete="name" maxlength="80" required>
+      </label>
+      <label>WhatsApp (com DDD)
+        <input name="whatsapp" id="campoWhats" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-9999" maxlength="16" required>
+      </label>
+      <label>E-mail <span class="opcional">(opcional, para receber o resumo)</span>
+        <input name="email" id="campoEmail" type="email" autocomplete="email" maxlength="120">
+      </label>
+      <label class="check">
+        <input type="checkbox" id="campoAceite" required>
+        <span>Autorizo a IPa a usar meu nome e contato apenas para combinar esta doação. Os dados serão apagados após a campanha.</span>
+      </label>
+
+      <p class="modal__alerta">Depois de finalizar, não é possível alterar a doação.</p>
+      <div id="turnstileModal" class="turnstile"></div>
+      <p class="modal__erro" id="modalErro" role="alert"></p>
+      <button type="submit" class="botao botao--primario botao--largo" id="btnConfirmar">Confirmar doação</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <div class="verif" id="turnstileCaixa" aria-live="polite">
+    <p>Só um instante: confirme que você é uma pessoa para salvar.</p>
+    <div id="turnstile"></div>
+  </div>
+
+  <footer class="rodape">
+    <img class="rodape__logo" src="img/logo-ipa.webp" alt="IPa — Movimento Comunitário" width="160" height="85" loading="lazy">
+    <p><strong>IPa — Movimento Comunitário e Social</strong></p>
+    <p class="insta insta--rodape"><a class="botao-insta" href="https://www.instagram.com/ipa.social/" target="_blank" rel="noopener"><svg class="botao-insta__icone" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h1.6l1.2-1.8c.3-.4.7-.7 1.2-.7h3c.5 0 .9.3 1.2.7L15.9 6h1.6A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12.5" r="3.3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Siga @ipa.social no Instagram</a></p>
+    <p class="rodape__sigma">Desenvolvido por Sigma Creative Hub</p>
+  </footer>
+</body>
+</html>

@@ -21,10 +21,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=15">
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
-  <script src="vendor-qrcode.js" defer></script>
-  <script src="app.js" defer></script>
+  <script src="vendor-qrcode.js?v=15" defer></script>
+  <script src="galeria-dados.js?v=15" defer></script>
+  <script src="galeria.js?v=15" defer></script>
+  <script src="app.js?v=15" defer></script>
 </head>
 <body>
   <a class="pular" href="#catalogo">Pular para os brinquedos</a>
@@ -69,6 +71,17 @@
     </section>
 
     <p class="nota">Valores de referência por brinquedo. Depois de finalizar, você pode pagar pelo PIX abaixo.</p>
+
+    <section class="galeria" id="galeria" aria-labelledby="galeriaTitulo" hidden>
+      <p class="galeria__selo">A IPa em ação</p>
+      <h2 id="galeriaTitulo">Veja o que já fizemos juntos</h2>
+      <p class="galeria__texto">Cada doação vira um momento como estes. Toque em um álbum para ver as fotos.</p>
+      <div class="galeria__carrossel">
+        <button type="button" class="galeria__seta" id="galeriaAnt" aria-label="Álbuns anteriores" disabled>‹</button>
+        <div class="galeria__albuns" id="galeriaAlbuns"></div>
+        <button type="button" class="galeria__seta" id="galeriaProx" aria-label="Próximos álbuns">›</button>
+      </div>
+    </section>
 
     <section class="pix" id="pix" aria-labelledby="pixTitulo">
       <h2 id="pixTitulo">Doe pelo PIX</h2>
@@ -161,6 +174,21 @@
       <p class="modal__erro" id="modalErro" role="alert"></p>
       <button type="submit" class="botao botao--primario botao--largo" id="btnConfirmar">Confirmar doação</button>
     </form>
+  </dialog>
+
+  <dialog class="album" id="albumModal" aria-labelledby="albumTitulo">
+    <div class="album__topo">
+      <div><h2 id="albumTitulo"></h2><p id="albumInfo"></p></div>
+      <button type="button" class="album__fechar" id="albumFechar" aria-label="Fechar álbum">×</button>
+    </div>
+    <div class="album__mosaico" id="albumMosaico"></div>
+  </dialog>
+
+  <dialog class="foto" id="fotoModal" aria-label="Foto ampliada">
+    <button type="button" class="foto__fechar" id="fotoFechar" aria-label="Fechar foto">×</button>
+    <button type="button" class="foto__nav foto__nav--ant" id="fotoAnt" aria-label="Foto anterior">‹</button>
+    <figure class="foto__quadro"><img id="fotoImg" alt=""><figcaption id="fotoContador"></figcaption></figure>
+    <button type="button" class="foto__nav foto__nav--prox" id="fotoProx" aria-label="Próxima foto">›</button>
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
